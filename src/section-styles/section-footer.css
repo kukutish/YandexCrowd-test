@@ -1,0 +1,9 @@
+.section-footer {
+  padding: 2.5rem 0 4.5rem;
+  background-color: var(--color-brown);
+}
+
+.section-footer__content {
+  opacity: 60%;
+  line-height: 120%;
+}

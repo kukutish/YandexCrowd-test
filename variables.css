@@ -1,0 +1,14 @@
+@import "fonts.css";
+
+:root {
+  --color-black: #1F1F1F;
+  --color-yellow: #FBCE51;
+  --color-gray: #D6D6D6;
+  --color-red: #F54932;
+  --color-blue: #3057A2;
+  --color-brown: #E9DED4;
+  --color-white: #FFFFFF;
+  --color-gray-900: #595653;
+  --font-header: 'Merriweather', sans-serif;
+  --font-base: 'Golos Text', sans-serif;
+}
