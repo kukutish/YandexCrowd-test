@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   const slides = document.querySelector('.js-stages-slider-steps');
   const sliderWrapper = document.querySelector('.js-stages-slider-wrapper');
   const prevButton = document.querySelector('.js-stages-button-prev');
