@@ -1,0 +1,13 @@
+@import "src/general-styles/variables.css";
+@import "src/general-styles/fonts.css";
+@import "src/general-styles/reset.css";
+@import "src/section-styles/section-information.css";
+@import "src/section-styles/section-hero.css";
+@import "src/section-styles/section-running-line.css";
+@import "src/section-styles/section-stages.css";
+@import "src/section-styles/section-members.css";
+@import "src/section-styles/section-footer.css";
+@import "src/general-styles/aos.css";
+@import "src/general-styles/basic-styles.css";
+
+

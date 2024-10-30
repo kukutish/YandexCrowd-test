@@ -1,0 +1,335 @@
+.section-hero {
+  position: relative;
+  background-color: var(--color-brown);
+  overflow: hidden;
+}
+
+.section-hero__background {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  mix-blend-mode: color-burn;
+  z-index: 3;
+}
+
+.section-hero__background > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.section-hero__header {
+  z-index: 4;
+  position: relative;
+  padding: 1.125rem 0;
+}
+
+.header-align-center {
+  display: block;
+  text-align: center;
+}
+
+.header-align-right {
+  display: block;
+  text-align: right;
+}
+
+.section-hero__logo-text {
+  color: var(--color-gray-900);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-left: 0.4375rem;
+}
+
+.section-hero__logo {
+  display: flex;
+  align-items: center;
+}
+
+.section-hero__logo-horse {
+  height: 1.6875rem;
+}
+
+.section-hero__images {
+  position: relative;
+  height: 16.5rem;
+}
+
+.section-hero__images-circle {
+  position: absolute;
+  max-width: 18.625rem;
+  bottom: 5.4375rem;
+  right: 2.9375rem;
+  width: 100%;
+  animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.section-hero__images-city {
+  position: absolute;
+  width: 55.375rem;
+  right: -6rem;
+  bottom: -1rem;
+}
+
+.section-hero__images-city > img {
+  width: 100%;
+}
+
+.section-hero__images-king {
+  position: absolute;
+  right: 16rem;
+  bottom: 6.5rem;
+  width: 3.5rem;
+}
+
+.section-hero__images-king > img {
+  width: 100%;
+}
+
+.section-hero__images-queen {
+  position: absolute;
+  right: 5rem;
+  bottom: 10.5rem;
+  width: 3.5rem;
+}
+
+.section-hero__images-queen > img {
+  width: 100%;
+}
+
+.section-hero__images-chess {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.section-hero__images-knight {
+  position: absolute;
+  bottom: 0;
+  width: 7rem;
+  right: 8rem;
+}
+
+.section-hero__images-knight > img {
+  width: 100%;
+}
+
+.section-hero__images-pawn {
+  position: absolute;
+  display: none;
+}
+
+.section-hero__images-pawn > img {
+  width: 100%;
+}
+
+.section-hero__content {
+  position: relative;
+  margin: 0 auto;
+  max-width: 37.5rem;
+  z-index: 10;
+  padding: 1.375rem 0 3.4375rem;
+}
+
+.section-hero__title {
+  max-width: 23rem;
+  margin: 0 auto;
+}
+
+.section-hero__content-text {
+  text-align: left;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  line-height: 130%;
+}
+
+.section-hero__content-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .section-hero__content-text {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-hero__header {
+    padding: 1.625rem 0;
+  }
+
+  .section-hero__logo-text {
+    font-size: 1rem;
+    line-height: 1.125rem;
+  }
+
+  .section-hero__logo-horse {
+    height: 2rem;
+  }
+
+  .section-hero__title {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .section-hero__images-city {
+    width: 70rem;
+  }
+
+  .section-hero__content {
+    padding: 1.375rem 0 7rem;
+  }
+
+  .section-hero__images-circle {
+    bottom: 2rem;
+    right: 1.8rem;
+    max-width: 28rem;
+  }
+
+  .section-hero__images-pawn {
+    display: block;
+    width: 3.8rem;
+    right: 1rem;
+    bottom: 0.9rem;
+  }
+
+  .section-hero__images-knight {
+    display: block;
+    width: 8rem;
+    right: 15rem;
+  }
+
+  .section-hero__images-king {
+    right: 22rem;
+    bottom: 50%;
+    width: 5rem;
+  }
+
+  .section-hero__images-queen {
+    right: 7rem;
+    bottom: 80%;
+    width: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-hero__header {
+    justify-content: left;
+  }
+
+  .section-hero__images {
+    position: absolute;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+
+  .section-hero__images-circle {
+    bottom: 5.8rem;
+    right: 2.0625rem;
+    max-width: 41.25rem;
+  }
+
+  .section-hero__images-city {
+    position: absolute;
+    bottom: -3%;
+    right: -7.5rem;
+    width: 100.1875rem;
+  }
+
+  .section-hero__images-king {
+    right: 32rem;
+    bottom: 23%;
+    width: 8rem;
+  }
+
+  .section-hero__images-queen {
+    right: 11rem;
+    bottom: 38%;
+    width: 8rem;
+  }
+
+  .section-hero__images-knight {
+    width: 12rem;
+    right: 20rem;
+  }
+
+  .section-hero__images-pawn {
+    width: 5.125rem;
+    right: 2.8125rem;
+    bottom: 1.25rem;
+  }
+
+  .section-hero__content {
+    margin: 0;
+    max-width: 45%;
+    padding-top: 2.25rem;
+    padding-bottom: 8.125rem;
+  }
+
+  .section-hero__content-buttons {
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1604px) {
+  .section-hero__images {
+    max-width: 100.1875rem;
+    margin: 0 auto;
+  }
+
+  .section-hero__images-chess {
+    max-width: 100.1875rem;
+    margin: 0 auto;
+  }
+
+  .section-hero__images-city {
+    right: 0;
+    left: 0;
+  }
+
+  .section-hero__images-circle {
+    right: 9.375rem;
+  }
+
+  .section-hero__images-king {
+    right: 40%;
+    bottom: 23%;
+  }
+
+  .section-hero__images-queen {
+    right: 18%;
+    bottom: 40%;
+  }
+
+
+  .section-hero__images-knight {
+    right: 27rem;
+  }
+
+  .section-hero__images-pawn {
+    right: 10.6rem;
+  }
+
+  .section-hero__content {
+    padding-bottom: 8.25rem;
+  }
+}
