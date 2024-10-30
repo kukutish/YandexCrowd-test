@@ -1,5 +1,6 @@
 .section-information {
   margin-bottom: 7.5rem;
+  overflow: hidden;
 }
 
 .section-information__lecture {
