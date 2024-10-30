@@ -7,6 +7,10 @@
   gap: 2.5rem;
 }
 
+.section-members__header {
+  user-select: none;
+}
+
 .section-members__slider-navigation {
   display: flex;
   align-items: center;
@@ -15,6 +19,12 @@
 
 .section-members__slider-navigation-numbers {
   margin: 0 0.875rem;
+  user-select: none;
+}
+
+.section-members__numbers-active {
+  display: inline-block;
+  width: 0.7rem;
 }
 
 .section-members__numbers-opacity {
@@ -31,6 +41,10 @@
 .section-members__slide {
   flex: 0 0 100%;
   text-align: center;
+  user-select: none;
+  scale: 20%;
+  opacity: 0;
+  transition: 0.2s;
 }
 
 .section-members__slide-image {
@@ -71,6 +85,11 @@
 .section-members__button:hover {
   background-color: var(--color-blue);
   color: var(--color-white);
+}
+
+.section-members__animation-show {
+  scale: 100%;
+  opacity: 1;
 }
 
 

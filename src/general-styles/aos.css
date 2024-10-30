@@ -1,0 +1,44 @@
+.aos {
+  transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.27);
+  transition-duration: 0.7s;
+}
+
+.aos-up {
+  transform: translateY(5rem);
+  opacity: 0;
+}
+
+.aos-right {
+  transform: translateX(-10rem);
+  opacity: 0;
+}
+
+.aos-init {
+  transform: none;
+  opacity: 1;
+}
+
+.aos-daley-2 {
+  transition-delay: 0.2s;
+}
+
+.aos-daley-3 {
+  transition-delay: 0.3s;
+}
+
+
+.aos-daley-4 {
+  transition-delay: 0.4s;
+}
+
+.aos-daley-5 {
+  transition-delay: 0.5s;
+}
+
+.aos-daley-6 {
+  transition-delay: 0.6s;
+}
+
+.aos-daley-7 {
+  transition-delay: 0.7s;
+}

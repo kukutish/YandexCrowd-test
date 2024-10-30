@@ -27,6 +27,16 @@
   padding: 1.125rem 0;
 }
 
+.header-align-center {
+  display: block;
+  text-align: center;
+}
+
+.header-align-right {
+  display: block;
+  text-align: right;
+}
+
 .section-hero__logo-text {
   color: var(--color-gray-900);
   text-transform: uppercase;
@@ -59,9 +69,6 @@
 }
 
 @keyframes rotate {
-  /*from {*/
-  /*    transform: rotate(0deg);*/
-  /*}*/
   to {
     transform: rotate(-360deg);
   }

@@ -7,41 +7,31 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentSlide = 0;
   const lastSlide = paginationElements.length - 1;
   let width = 0;
+  let startX = 0;
+  let endX = 0;
 
-  function updateSliderWidth() {
+  const updateSlidePosition = () => {
+    slides.style.transform = `translateX(-${width * currentSlide}px)`;
+  }
+
+  const updateSliderWidth = () => {
     width = sliderWrapper.offsetWidth;
     updateSlidePosition();
   }
 
-  function updateSlidePosition() {
-    slides.style.transform = `translateX(-${width * currentSlide}px)`;
-  }
-
-  function togglePaginationActiveClass(index) {
+  const togglePaginationActiveClass = (index) => {
     paginationElements[index].classList.toggle('slider-pagination-element_active');
   }
 
-  function updateNavigationButtons() {
+  const updateNavigationButtons = () => {
     prevButton.classList.toggle('slider-navigation-button_disabled', currentSlide === 0);
     nextButton.classList.toggle('slider-navigation-button_disabled', currentSlide === lastSlide);
   }
 
-  function goToNextSlide() {
-    if (currentSlide < lastSlide) {
-      moveToSlide(currentSlide + 1);
-    }
-  }
-
-  function goToPrevSlide() {
-    if (currentSlide > 0) {
-      moveToSlide(currentSlide - 1);
-    }
-  }
-
-  function moveToSlide(newSlide) {
+  const moveToSlide = (newSlide) => {
     togglePaginationActiveClass(currentSlide);
     currentSlide = newSlide;
-    slides.style.transition = '1s';
+    slides.style.transition = '0.6s';
     updateSlidePosition();
     setTimeout(() => {
       slides.style.transition = '0s';
@@ -50,7 +40,41 @@ document.addEventListener('DOMContentLoaded', () => {
     updateNavigationButtons();
   }
 
-  function initSlider() {
+  const goToNextSlide = () => {
+    if (currentSlide < lastSlide) {
+      moveToSlide(currentSlide + 1);
+    }
+  }
+
+  const goToPrevSlide = () => {
+    if (currentSlide > 0) {
+      moveToSlide(currentSlide - 1);
+    }
+  }
+
+  sliderWrapper.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  sliderWrapper.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
+  });
+
+
+  sliderWrapper.addEventListener('touchend', () => {
+    const swipeDistance = endX - startX;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(swipeDistance) > minSwipeDistance) {
+      if (swipeDistance < 0) {
+        goToNextSlide();
+      } else {
+        goToPrevSlide();
+      }
+    }
+  });
+
+  const initSlider = () => {
     updateSliderWidth();
     window.addEventListener('resize', updateSliderWidth);
     nextButton.addEventListener('click', goToNextSlide);
