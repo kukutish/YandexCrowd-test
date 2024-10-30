@@ -122,11 +122,11 @@ window.addEventListener('load', () => {
 
   sliderContainer.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
-  });
+  }, {passive: true});
 
   sliderContainer.addEventListener('touchmove', (e) => {
     endX = e.touches[0].clientX;
-  });
+  }, {passive: true});
 
   sliderContainer.addEventListener('touchend', () => {
     const swipeDistance = endX - startX;
