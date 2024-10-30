@@ -54,11 +54,11 @@ window.addEventListener('load', () => {
 
   sliderWrapper.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
-  });
+  }, {passive: true});
 
   sliderWrapper.addEventListener('touchmove', (e) => {
     endX = e.touches[0].clientX;
-  });
+  }, {passive: true});
 
 
   sliderWrapper.addEventListener('touchend', () => {
