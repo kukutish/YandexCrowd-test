@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   const sliderContainer = document.querySelector('.js-members__slider');
   const prevButton = document.querySelector('.js-members-button-prev');
   const nextButton = document.querySelector('.js-members-button-next');

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   const elements = document.querySelectorAll('.animated-element');
   const offset = 80;
 
