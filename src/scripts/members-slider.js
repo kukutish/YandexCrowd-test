@@ -37,13 +37,13 @@ window.addEventListener('load', () => {
     slides[num].classList.toggle('section-members__animation-show');
   }
 
+  const stopAutoSlide = () => {
+    clearInterval(autoSlideInterval);
+  }
+
   const startAutoSlide = () => {
     stopAutoSlide();
     autoSlideInterval = setInterval(moveToNextSlide, 4000);
-  }
-
-  const stopAutoSlide = () => {
-    clearInterval(autoSlideInterval);
   }
 
   const moveToNextSlide = () => {
