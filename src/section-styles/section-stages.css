@@ -22,7 +22,7 @@
     object-fit: contain;
     max-width: 25rem;
     margin: 0 auto -3.375rem;
-    z-index: 5;
+    z-index: 10;
     position: relative;
 }
 
