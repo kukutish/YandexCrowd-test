@@ -120,15 +120,63 @@ window.addEventListener('load', () => {
     updateSlideClass(windowWidth > 992 ? 3 : 1);
   }
 
-  sliderContainer.addEventListener('touchstart', (e) => {
+  // sliderContainer.addEventListener('touchstart', (e) => {
+  //   startX = e.touches[0].clientX;
+  // }, {passive: true});
+  //
+  // sliderContainer.addEventListener('touchmove', (e) => {
+  //   endX = e.touches[0].clientX;
+  // }, {passive: true});
+  //
+  // sliderContainer.addEventListener('touchend', () => {
+  //   const swipeDistance = endX - startX;
+  //   const minSwipeDistance = 50;
+  //   if (!isTransitioning) {
+  //     if (Math.abs(swipeDistance) > minSwipeDistance) {
+  //       stopAutoSlide();
+  //       if (swipeDistance < 0) {
+  //         moveToNextSlide();
+  //       } else {
+  //         moveToPreviousSlide();
+  //       }
+  //       startAutoSlide();
+  //     }
+  //   }
+  // });
+  //
+  // nextButton.addEventListener('click', () => {
+  //   stopAutoSlide();
+  //   moveToNextSlide();
+  //   startAutoSlide();
+  // });
+  //
+  // prevButton.addEventListener('click', () => {
+  //   stopAutoSlide();
+  //   moveToPreviousSlide();
+  //   startAutoSlide();
+  // });
+
+  let isSwiping = false;
+
+  sliderContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
+  sliderContainer.addEventListener('touchmove', handleTouchMove, { passive: true });
+  sliderContainer.addEventListener('touchend', handleTouchEnd);
+
+  function handleTouchStart(e) {
+    if (isTransitioning) return;
     startX = e.touches[0].clientX;
-  }, {passive: true});
+    endX = startX;
+    isSwiping = true;
+  }
 
-  sliderContainer.addEventListener('touchmove', (e) => {
+  function handleTouchMove(e) {
+    if (!isSwiping) return;
     endX = e.touches[0].clientX;
-  }, {passive: true});
+  }
 
-  sliderContainer.addEventListener('touchend', () => {
+  function handleTouchEnd() {
+    if (!isSwiping) return;
+    isSwiping = false;
     const swipeDistance = endX - startX;
     const minSwipeDistance = 50;
 
@@ -139,17 +187,21 @@ window.addEventListener('load', () => {
       } else {
         moveToPreviousSlide();
       }
+      endX = 0;
+      startX = 0;
       startAutoSlide();
     }
-  });
+  }
 
   nextButton.addEventListener('click', () => {
+    if (isSwiping || isTransitioning) return;
     stopAutoSlide();
     moveToNextSlide();
     startAutoSlide();
   });
 
   prevButton.addEventListener('click', () => {
+    if (isSwiping || isTransitioning) return;
     stopAutoSlide();
     moveToPreviousSlide();
     startAutoSlide();
