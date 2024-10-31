@@ -69,7 +69,7 @@ h2 {
   cursor: pointer;
 }
 
-.slider-navigation-button:hover {
+.slider-navigation-button:not(.slider-navigation-button_disabled):hover {
   background-color: var(--color-yellow);
 }
 

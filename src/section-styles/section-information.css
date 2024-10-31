@@ -22,7 +22,7 @@
 
 .section-information__header_red {
   color: var(--color-red);
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .section-information__header:last-child > .section-information__header_hidden {
